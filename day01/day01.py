@@ -28,9 +28,9 @@ def first(s: str) -> str:
                 digit = d
         except:
             pass
+
     idx = digits.index(digit)
     s1 = str(digits[idx % 10])
-    print(f"1st  {s} {digit} -> {s1}")
     return s1
 
 def last(s: str) -> str:
@@ -48,7 +48,6 @@ def last(s: str) -> str:
 
     idx = digits.index(digit)
     s1 = str(digits[idx % 10])
-    print(f"last {s} {digit} -> {s1}")
     return s1
 
 main()
