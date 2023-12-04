@@ -16,26 +16,26 @@ class Card:
         
         return 
 
-cards: List[Card] = []
-
-def process_copies(card: Card) -> int:
+def process_copies(card: Card, cards: List[Card]) -> int:
     b = 1
     for i in range(card.nr + 1, card.nr + card.matching_count + 1):
         if i <= len(cards):
-            b += process_copies(cards[i-1])
+            b += process_copies(cards[i-1], cards)
     return b
 
 def main():
     lines = open(file="day04/input.txt", mode='r').read().split('\n')
     
     a, b = 0, 0
+    cards: List[Card] = []
+
     for line in lines:
         card = Card(line)
         cards.append(card)
         a += card.a
 
     for card in cards:
-        b += process_copies(card)
+        b += process_copies(card, cards)
 
     print(f"a: {a}, b: {b}")
 
