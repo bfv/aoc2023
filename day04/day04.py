@@ -13,8 +13,6 @@ class Card:
         self.numbers = list(map(int, card.split(':')[1].split('|')[1].split()))
         self.matching_count = len([value for value in self.numbers if value in self.winning])
         self.a = int(2**(self.matching_count-1))
-        
-        return 
 
 def process_copies(card: Card, cards: List[Card]) -> int:
     b = 1
