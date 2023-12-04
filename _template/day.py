@@ -1,6 +1,9 @@
 
-lines = open(file="dayXX/_input.txt", mode="r").read().split("\n")
+def main():
 
-for line in lines:
-    print(line)
+    lines = open(file="dayXX/_input.txt", mode="r").read().split("\n")
+
+    for line in lines:
+        print(line)
     
+main()
